@@ -60,8 +60,7 @@ CREATE TABLE date_day (
     weekday VARCHAR(20),
     generated_time DATETIME
 );
-
-
+```
 ▶️ How to Run the Project
 1️⃣ Install Dependency
 pip install mysql-connector-python
