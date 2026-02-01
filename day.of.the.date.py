@@ -1,20 +1,20 @@
 import datetime
 def get_date():
-    return int(input("Enter date : "))
+    return int(input("Enter date (DD) : "))
 # d=date()    
 def get_year():
-    return int(input("Enter year : "))
+    return int(input("Enter year (YYYY) : "))
 # year=y()   
 def get_month():
     return int(input("Enter month (1-12) : "))
 def month_code(m,year): 
-    if year%400==0 or (year%4==0 and year%100!=0):
-        m_code=[0,3,4,0,2,5,0,3,6,1,4,6]
-    else:
-        m_code=[1,4,4,0,2,5,0,3,6,1,4,6]  
-    
-    mo=m_code[m-1]
-    return mo
+        if year%400==0 or (year%4==0 and year%100!=0):
+            m_code=[0,3,4,0,2,5,0,3,6,1,4,6]
+        else:
+            m_code=[1,4,4,0,2,5,0,3,6,1,4,6]  
+        
+        mo=m_code[m-1]
+        return mo
 # print(mo)
 # mo=month_code()
  
@@ -107,6 +107,9 @@ def insert_into_sql(d,m,year,md,t):
 #Execution
 d=get_date()
 m=get_month()
+if m>12: 
+       print("Invalid input of month")
+       exit()
 year=get_year()
 
 mo=month_code(m,year)
